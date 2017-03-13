@@ -37,13 +37,14 @@ function solveSudoku() {
       let cellId = 'C' + (i * 9 + j)
       let cellValue = parseInt(document.getElementById(cellId).value)
       grid[i][j] = isNaN(cellValue) ? 'x' : cellValue
+      //document.getElementById('C' + (i * 9 + j)).value = isNaN(cellValue) ? 'x' : cellValue
     }
   }
   console.log(grid)
   solve(grid)
-  let gridLayout = document.querySelector('#solved-grid')
+  /*let gridLayout = document.querySelector('#solved-grid')
   gridLayout.innerHTML = gridLayout.innerHTML + '<h2>Solved Grid:</h2>'
-  grid.forEach( (arr)=>{gridLayout.innerHTML = gridLayout.innerHTML + '<div>' + arr + '</div>'})
+  grid.forEach( (arr)=>{gridLayout.innerHTML = gridLayout.innerHTML + '<div>' + arr + '</div>'})*/
 }
 
 function solve(grid) {
@@ -56,7 +57,8 @@ function solve(grid) {
       if(isValidMove(i, grid, location)){
         //make tentative assignment
         grid[location.row][location.col] = i
-
+        document.getElementById('C' + (location.row * 9 + location.col)).value = i
+        document.getElementById('C' + (location.row * 9 + location.col)).style = 'color:red'
         // return is solved
         if(solve(grid))
           return true
