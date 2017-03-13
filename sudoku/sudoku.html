@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script defer src="./solver.js"
+</head>
+<body>
+  Hello Sudoku!
+  <div id="sudoku-grid"><div>
+  <table class="sudoku-grid">
+    <tbody>
+      <tr>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C0">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C1">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C2">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C3">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C4">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C5">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C6">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C7">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C8">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C9">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C10">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C11">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C12">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C13">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C14">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C15">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C16">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C17">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C18">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C19">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C20">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C21">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C22">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C23">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C24">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C25">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C26">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C27">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C28">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C29">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C30">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C31">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C32">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C33">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C34">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C35">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C36">
+          </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C37">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C38">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C39">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C40">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C41">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C42">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C43">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C44">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C45">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C46">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C47">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C48">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C49">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C50">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C51">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C52">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C53">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C54">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C55">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C56">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C57">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C58">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C59">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C60">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C61">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C62">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C63">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C64">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C65">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C66">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C67">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C68">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C69">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C70">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C71">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C72">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C73">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C74">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C75">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C76">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C77">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C78">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C79">
+        </td>
+        <td>
+          <input class="grid-cell" type="text" size="1" maxlength="1" id="C80">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<input type="button" value="Solve it!" onclick="solveSudoku()">
+<div id='solved-grid'></div>
+</body>
+</html>
