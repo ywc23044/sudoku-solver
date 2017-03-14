@@ -34,7 +34,7 @@ function solveSudoku() {
   // get user input
   for(let i = 0; i < 9; i++){
     for(let j = 0; j< 9; j++){
-      let cellId = 'C' + (i * 9 + j)
+      let cellId = 'C' + i + j
       let cellValue = parseInt(document.getElementById(cellId).value)
       grid[i][j] = isNaN(cellValue) ? 'x' : cellValue
       //document.getElementById('C' + (i * 9 + j)).value = isNaN(cellValue) ? 'x' : cellValue
@@ -57,8 +57,8 @@ function solve(grid) {
       if(isValidMove(i, grid, location)){
         //make tentative assignment
         grid[location.row][location.col] = i
-        document.getElementById('C' + (location.row * 9 + location.col)).value = i
-        document.getElementById('C' + (location.row * 9 + location.col)).style = 'color:red'
+        document.getElementById('C' + location.row + location.col).value = i
+        document.getElementById('C' + location.row + location.col).style = 'color:red'
         // return is solved
         if(solve(grid))
           return true
