@@ -1,6 +1,5 @@
-
 html, body {
-  background-color: #FAFAFA
+  background-color: #FAFAFA;
 }
 
 colgroup, tbody { border: solid medium; }
@@ -33,9 +32,50 @@ input.has-value {
 }
 
 #solve-button {
-  position: relative;
+	display: inline-block;
+	font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
   top: 15px;
   left: 185px;
   width: 100px;
   height: 45px;
+	padding: .8em 1.4em;
+	padding-right: 4.7em;
+	background: #009ED8;
+	border: none;
+	color: white;
+	transition: .2s;
+	&:before,
+	&:after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		padding-top: inherit;
+		padding-bottom: inherit;
+		width: 2.8em;
+		content: "\00a0";
+		font-family: 'FontAwesome', sans-serif;
+		font-size: 1.2em;
+		text-align: center;
+
+		transition: .2s;
+		transform-origin: 50% 60%;
+	}
+	&:before {
+		background: #303036;
+	}
+	&:hover {
+		background: darken(#009ED8, 10%);
+	}
+	&:active,
+	&:focus {
+		background: darken(#009ED8, 30%);
+		outline: none;
+	}
+}
+
+.button {
+	min-width: 15em;
 }
