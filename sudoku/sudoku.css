@@ -1,0 +1,41 @@
+
+html, body {
+  background-color: #FAFAFA
+}
+
+colgroup, tbody { border: solid medium; }
+
+td {
+  border: 1px solid #000000;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input.grid-cell {
+  color: #000000;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  background-color: #FFFFFF;
+  outline: none;
+}
+
+input.has-value {
+  background-color: #EEEEEE;
+}
+
+.sudoku-grid {
+  border: solid;
+  border-collapse: collapse;
+}
+
+#solve-button {
+  position: relative;
+  top: 15px;
+  left: 185px;
+  width: 100px;
+  height: 45px;
+}
