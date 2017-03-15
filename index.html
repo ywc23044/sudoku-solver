@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
   <script defer src="sudoku/solver.js"></script>
+  <link rel="stylesheet" type"text/css" href="sudoku/sudoku.css">
 </head>
 <body>
-  Hello Sudoku!
-  <div id="sudoku-grid"><div>
+  <h1>Hello Sudoku!</h1>
   <table class="sudoku-grid">
+    <colgroup><col span="3"></colgroup>
+    <colgroup><col span="3"></colgroup>
+    <colgroup><col span="3"></colgroup>
     <tbody>
       <tr>
         <td>
@@ -95,6 +98,8 @@
           <input class="grid-cell" type="text" size="1" maxlength="1" id="C28">
         </td>
       </tr>
+    </tbody>
+    <tbody>
       <tr>
         <td>
           <input class="grid-cell" type="text" size="1" maxlength="1" id="C30">
@@ -182,6 +187,8 @@
           <input class="grid-cell" type="text" size="1" maxlength="1" id="C58">
         </td>
       </tr>
+    </tbody>
+    <tbody>
       <tr>
         <td>
           <input class="grid-cell" type="text" size="1" maxlength="1" id="C60">
@@ -271,7 +278,6 @@
       </tr>
     </tbody>
   </table>
-<input type="button" value="Solve it!" onclick="solveSudoku()">
-<div id='solved-grid'></div>
+<input id="solve-button" type="button" value="Solve it!" onclick="solveSudoku()">
 </body>
 </html>
