@@ -1,4 +1,4 @@
-var grid = [
+let grid = [
   [ 8, 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
   [ 'x', 'x', 3, 6, 'x', 'x', 'x', 'x', 'x'],
   [ 'x', 7, 'x', 'x', 9, 'x', 2, 'x', 'x'],
@@ -10,7 +10,7 @@ var grid = [
   [ 'x', 9, 'x', 'x', 'x', 'x', 4, 'x', 'x']
 ]
 
-var grid2 = [
+let grid2 = [
   [ 3, 8, 6, 5, 8, 8, 4, 8, 8],
   [ 5, 2, 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
   ['x', 8, 7, 'x', 'x', 'x', 'x', 3, 1],
@@ -22,15 +22,21 @@ var grid2 = [
   ['x', 'x', 5, 2, 'x', 6, 3, 'x', 'x']
 ]
 
-/*var gridLayout = document.querySelector('#sudoku-grid')
+let elements = document.querySelectorAll('input.grid-cell')
+for (let i = 0; i < elements.length; i++) {
+  elements[i].addEventListener('blur', function() {
+    elements[i].style = elements[i].value ? 'background-color: #bfbfbf' : 'background-color: white'
+  })
+}
 
+/*var gridLayout = document.querySelector('#sudoku-grid')
 grid.forEach( (arr)=>{gridLayout.innerHTML = gridLayout.innerHTML + '<div>' + arr + '</div>'})
 solve(grid)
 gridLayout.innerHTML = gridLayout.innerHTML + '<h2>Solved Grid:</h2>'
 grid.forEach( (arr)=>{gridLayout.innerHTML = gridLayout.innerHTML + '<div>' + arr + '</div>'})*/
 
 function solveSudoku() {
-  var grid= [[],[],[],[],[],[],[],[],[]]
+  let grid= [[],[],[],[],[],[],[],[],[]]
   // get user input
   for(let i = 0; i < 9; i++){
     for(let j = 0; j< 9; j++){
@@ -49,7 +55,7 @@ function solveSudoku() {
 
 function solve(grid) {
   //solved when no unassigned cell
-  var location = {row: '', col: ''}
+  let location = {row: '', col: ''}
   if(!unassignedCell(grid, location))
     return true
   for(let i = 1; i <= 9 ; i++)
@@ -58,7 +64,7 @@ function solve(grid) {
         //make tentative assignment
         grid[location.row][location.col] = i
         document.getElementById('C' + location.row + location.col).value = i
-        document.getElementById('C' + location.row + location.col).style = 'color:red'
+        //document.getElementById('C' + location.row + location.col).style = 'color:red'
         // return is solved
         if(solve(grid))
           return true
