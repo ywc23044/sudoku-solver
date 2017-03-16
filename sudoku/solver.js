@@ -22,18 +22,17 @@ let grid2 = [
   ['x', 'x', 5, 2, 'x', 6, 3, 'x', 'x']
 ]
 
-let elements = document.querySelectorAll('input.grid-cell')
+document.querySelectorAll('input.grid-cell').forEach(c => {
+  c.addEventListener('blur', () => { c.classList.add(c.value ? 'has-value' : '')
+  })
+})
+
+/*let elements = document.querySelectorAll('input.grid-cell')
 for (let i = 0; i < elements.length; i++) {
-  elements[i].addEventListener('blur', function() {
+  elements[i].addEventListener('blur', () => {
     elements[i].style = elements[i].value ? 'background-color: #bfbfbf' : 'background-color: white'
   })
-}
-
-/*var gridLayout = document.querySelector('#sudoku-grid')
-grid.forEach( (arr)=>{gridLayout.innerHTML = gridLayout.innerHTML + '<div>' + arr + '</div>'})
-solve(grid)
-gridLayout.innerHTML = gridLayout.innerHTML + '<h2>Solved Grid:</h2>'
-grid.forEach( (arr)=>{gridLayout.innerHTML = gridLayout.innerHTML + '<div>' + arr + '</div>'})*/
+}*/
 
 function solveSudoku() {
   let grid= [[],[],[],[],[],[],[],[],[]]
@@ -43,7 +42,6 @@ function solveSudoku() {
       let cellId = 'C' + i + j
       let cellValue = parseInt(document.getElementById(cellId).value)
       grid[i][j] = isNaN(cellValue) ? 'x' : cellValue
-      //document.getElementById('C' + (i * 9 + j)).value = isNaN(cellValue) ? 'x' : cellValue
     }
   }
   console.log(grid)
@@ -122,4 +120,13 @@ function checkBox(num, grid, boxStartRow, boxStartColumn) {
     }
   }
   return true
+}
+
+function resetGrid() {
+  document
+  .querySelectorAll('td input')
+  .forEach(x => {
+    x.classList.remove('has-value')
+    x.value = ''
+  })
 }
