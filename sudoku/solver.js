@@ -23,7 +23,8 @@ let grid2 = [
 ]
 
 document.querySelectorAll('input.grid-cell').forEach(c => {
-  c.addEventListener('blur', () => { c.classList.add(c.value ? 'has-value' : '')
+  c.addEventListener('blur', () => {
+    c.classList.add(c.value ? 'has-value' : '')
   })
 })
 
