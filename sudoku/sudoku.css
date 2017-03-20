@@ -26,11 +26,17 @@ input.grid-cell {
   outline: none;
 }
 
-input.has-value {
-  background-color: #bfbfbf;
+input.grid-cell.wrong-value {
+  background-color:red;
+  color:white;
 }
 
-.sudoku-grid {
+input.grid-cell.right-value {
+  background-color: #bfbfbf;
+  color: black;
+}
+
+#sudoku-grid {
   border: solid;
   border-collapse: collapse;
 }
