@@ -24,9 +24,55 @@ let grid2 = [
 
 document.querySelectorAll('input.grid-cell').forEach(c => {
   c.addEventListener('blur', () => {
-    c.classList.add(c.value ? 'has-value' : '')
+    let loc = {row : c.id[1], col : c.id[2]}
+    if(c.value){
+      if(isValidMoveF(c.value, loc)){
+        c.classList.add('has-value')
+        c.style = 'color:black;'
+      }
+      else c.style = 'color:red;'
+    }
+    else c.style = 'color:black'
   })
 })
+
+function isValidMoveF(num, location) {
+  let row = location.row
+  let col = location.col
+
+  return  checkRowF(num, row, col) &&
+          checkColumnF(num, row, col) &&
+          checkBoxF(num, row - (row % 3),  col - (col % 3), row, col)
+}
+
+function checkRowF(num, row, col) {
+  for(let i = 0; i < 9; i++) {
+    if (i == col) continue
+    if(document.getElementById('C' + row + i).value == num)
+      return false
+  }
+  return true
+}
+
+function checkColumnF(num, row, column) {
+  for(let i = 0; i < 9; i++) {
+    if (i == row) continue
+    if( document.getElementById('C' + i + column).value == num)
+      return false
+  }
+  return true
+}
+
+function checkBoxF(num, boxStartRow, boxStartColumn, row, col) {
+  for(let i = 0; i < 3; i++) {
+    for(let j = 0; j < 3; j++) {
+      if (((boxStartRow + i) == row) && ((boxStartColumn + j) == col)) continue
+      if(document.getElementById('C' + (boxStartRow + i) + (boxStartColumn + j)).value == num)
+        return false
+    }
+  }
+  return true
+}
 
 /*let elements = document.querySelectorAll('input.grid-cell')
 for (let i = 0; i < elements.length; i++) {
