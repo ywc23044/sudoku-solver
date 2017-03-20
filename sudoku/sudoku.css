@@ -24,16 +24,23 @@ input.grid-cell {
   font-size: 24px;
   background-color: #FFFFFF;
   outline: none;
+  animation: resume 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 input.grid-cell.wrong-value {
-  background-color:red;
   color:white;
+  animation: wrong 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 input.grid-cell.right-value {
-  background-color: #bfbfbf;
   color: black;
+  animation: right 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 #sudoku-grid {
@@ -47,7 +54,7 @@ input.grid-cell.right-value {
 	-webkit-transition: all 0.1s;
 }
 
-#solve-button
+.action-button
 {
   position: relative;
   top: 15px;
@@ -78,9 +85,43 @@ input.grid-cell.right-value {
 	text-shadow: 0px -2px #BD3E31;
 }
 
+#solve-button:disabled
+{
+  background-color: #BFBFBF;
+	border-bottom: 5px solid #8C8C8C;
+	text-shadow: 0px -2px #8C8C8C;
+}
+
 .action-button:active
 {
 	transform: translate(0px,5px);
   -webkit-transform: translate(0px,5px);
 	border-bottom: 1px solid;
+}
+
+@keyframes right {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #BFBFBF;
+  }
+}
+
+@keyframes resume {
+  0% {
+    background-color: #BFBFBF;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes wrong {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #e14b3c;
+  }
 }
