@@ -30,18 +30,28 @@ document.getElementById('sudoku-grid').addEventListener('change', (e) => {
       target.classList.add('right-value')
       target.classList.remove('wrong-value')
       //remove wrong-value highlight
-      document.querySelectorAll('.wrong-value').forEach((c) => {
-        c.classList.add('right-value')
-        c.classList.remove('wrong-value')
-      })
+      removeHightlight()
     }
     else {
       target.classList.add('wrong-value')
       target.classList.remove('right-value')
+      //disable solve button
+      document.getElementById('solve-button').disabled = true
     }
   }
-  else target.classList.remove('right-value', 'wrong-value')
+  else {
+    target.classList.remove('right-value', 'wrong-value')
+    removeHightlight()
+  }
   })
+
+function removeHightlight () {
+  document.querySelectorAll('.wrong-value').forEach((c) => {
+    c.classList.add('right-value')
+    c.classList.remove('wrong-value')
+  })
+  document.getElementById('solve-button').disabled = false
+}
 
 function isValidMoveF(num, location) {
   let row = location.row
@@ -214,4 +224,5 @@ function resetGrid() {
     c.classList.remove('wrong-value')
     c.value = ''
   })
+  document.getElementById('solve-button').disabled = false
 }
