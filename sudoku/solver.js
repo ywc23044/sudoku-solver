@@ -158,8 +158,7 @@ function paintGrid(grid) {
     let y = col[i] - 1
     let cell = document.getElementById('C' + x + y)
     cell.value = grid[x][y]
-    cell.classList.add('has-value')
-  }
+    cell.classList.remove('right-value')  }
 }
 
 function solveSudoku() {
