@@ -22,19 +22,36 @@ let grid2 = [
   ['x', 'x', 5, 2, 'x', 6, 3, 'x', 'x']
 ]
 
-document.querySelectorAll('input.grid-cell').forEach(c => {
-  c.addEventListener('blur', () => {
-    let loc = {row : c.id[1], col : c.id[2]}
-    if(c.value){
-      if(isValidMoveF(c.value, loc)){
-        c.classList.add('has-value')
-        c.style = 'color:black;'
-      }
-      else c.style = 'color:red;'
+document.getElementById('sudoku-grid').addEventListener('change', (e) => {
+  let target = e.target
+  let loc = {row : target.id[1], col : target.id[2]}
+  if(target.value){
+    if(isValidMoveF(target.value, loc)){
+      target.classList.add('right-value')
+      target.classList.remove('wrong-value')
+      //remove wrong-value highlight
+      removeHightlight()
     }
-    else c.style = 'color:black'
+    else {
+      target.classList.add('wrong-value')
+      target.classList.remove('right-value')
+      //disable solve button
+      document.getElementById('solve-button').disabled = true
+    }
+  }
+  else {
+    target.classList.remove('right-value', 'wrong-value')
+    removeHightlight()
+  }
   })
-})
+
+function removeHightlight () {
+  document.querySelectorAll('.wrong-value').forEach((c) => {
+    c.classList.add('right-value')
+    c.classList.remove('wrong-value')
+  })
+  document.getElementById('solve-button').disabled = false
+}
 
 function isValidMoveF(num, location) {
   let row = location.row
@@ -48,8 +65,12 @@ function isValidMoveF(num, location) {
 function checkRowF(num, row, col) {
   for(let i = 0; i < 9; i++) {
     if (i == col) continue
-    if(document.getElementById('C' + row + i).value == num)
+    let cell = document.getElementById('C' + row + i)
+    if(cell.value == num){
+      cell.classList.add('wrong-value')
+      cell.classList.remove('right-value')
       return false
+    }
   }
   return true
 }
@@ -57,8 +78,12 @@ function checkRowF(num, row, col) {
 function checkColumnF(num, row, column) {
   for(let i = 0; i < 9; i++) {
     if (i == row) continue
-    if( document.getElementById('C' + i + column).value == num)
+    let cell = document.getElementById('C' + i + column)
+    if( cell.value == num){
+      cell.classList.add('wrong-value')
+      cell.classList.remove('right-value')
       return false
+    }
   }
   return true
 }
@@ -67,8 +92,12 @@ function checkBoxF(num, boxStartRow, boxStartColumn, row, col) {
   for(let i = 0; i < 3; i++) {
     for(let j = 0; j < 3; j++) {
       if (((boxStartRow + i) == row) && ((boxStartColumn + j) == col)) continue
-      if(document.getElementById('C' + (boxStartRow + i) + (boxStartColumn + j)).value == num)
+      let cell = document.getElementById('C' + (boxStartRow + i) + (boxStartColumn + j))
+      if(cell.value == num){
+        cell.classList.add('wrong-value')
+        cell.classList.remove('right-value')
         return false
+      }
     }
   }
   return true
@@ -220,8 +249,10 @@ function checkBox(num, grid, boxStartRow, boxStartColumn) {
 function resetGrid() {
   document
   .querySelectorAll('td input')
-  .forEach(x => {
-    x.classList.remove('has-value')
-    x.value = ''
+  .forEach(c => {
+    c.classList.remove('right-value')
+    c.classList.remove('wrong-value')
+    c.value = ''
   })
+  document.getElementById('solve-button').disabled = false
 }
